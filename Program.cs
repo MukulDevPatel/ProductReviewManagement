@@ -35,9 +35,25 @@ class Program
             new ProductReview() {PoductID=25, UserID=10,Rating=3.2, Review="Fine", IsLike=false},
         };
 
-        foreach (var data in list)
+        bool flag = true;
+        while(flag)
         {
-            Console.WriteLine("PoductID:" + " " + data.PoductID + " " + "UserID:" + data.UserID + " " + "Rating:" + data.Rating + " " + "Review:" + data.Review + " " + "IsLike:" + data.IsLike);
+            Console.WriteLine("\nSelect options");
+            Console.WriteLine("1. Create Product review \n2. Retrieve top 3 data \n3. Exit");
+            int option = Convert.ToInt32 (Console.ReadLine());
+            switch(option)
+            {
+                case 1:
+                    foreach (var data in list)
+                    {
+                        Console.WriteLine("PoductID:" + " " + data.PoductID + " " + "UserID:" + data.UserID + " " + "Rating:" + data.Rating + " " + "Review:" + data.Review + " " + "IsLike:" + data.IsLike);
+                    }
+                    break;
+                case 2:
+                    ProductManagement productManagement = new ProductManagement();
+                    productManagement.TopRecords(list);
+                    break;
+            }
         }
     }
 }
