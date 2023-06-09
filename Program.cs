@@ -39,7 +39,7 @@ class Program
         while(flag)
         {
             Console.WriteLine("\nSelect options");
-            Console.WriteLine("1. Create Product review \n2. Retrieve top 3 data \n3. Select data from the list\n4. Count each review ProductID \n5. Exit");
+            Console.WriteLine("1. Create Product review \n2. Retrieve top 3 data \n3. Select data from the list\n4. Count each review ProductID \n5. Get ProductID and Review \n6. Exit");
             int option = Convert.ToInt32 (Console.ReadLine());
             switch(option)
             {
@@ -62,6 +62,10 @@ class Program
                     productCount.CountProductID(list);
                     break;
                 case 5:
+                    ProductManagement productIDReview = new ProductManagement();
+                    productIDReview.ProductIDReview(list);
+                    break;
+                case 6:
                     flag = false;
                     break;
             }
